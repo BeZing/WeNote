@@ -63,30 +63,27 @@
     self.editBtn.backgroundColor = [UIColor blackColor];
     [self.editBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     [self.editBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateHighlighted];
-    [self.editBtn addTarget:self action:@selector(startEdit) forControlEvents:UIControlEventTouchUpInside];
+    [self.editBtn addTarget:self action:@selector(isEdit) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.editBtn];
 
     [self.editBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(EditImageWidth, EditImageWidth));
-        make.left.equalTo(self.textView.mas_right).with.offset(5);
-        make.top.equalTo(self.mas_top).with.offset(0);
+        make.left.equalTo(self.textView.mas_right).with.offset(0);
+        make.top.equalTo(self.mas_top).with.offset(2);
         make.right.equalTo(self.mas_right).with.offset(0);
     }];
 
 
 }
 -(void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView{
-    if (growingTextView.internalTextView.markedTextRange == nil && growingTextView.internalTextView.text.length > self.limitLenth)      {
-        growingTextView.internalTextView.text = [growingTextView.internalTextView.text substringToIndex:self.limitLenth];
+    if (growingTextView.internalTextView.markedTextRange == nil && growingTextView.text.length > self.limitLenth)      {
+        growingTextView.text = [growingTextView.text substringToIndex:self.limitLenth];
     }
 }
 
--(void)startEdit{
-    self.textView.editable = YES;
-    self.editCallback(YES);
+-(void)isEdit{
+    self.textView.editable = !self.textView.editable;
+    self.editCallback(self.textView.editable);
 }
--(void)endEdit{
-    self.textView.editable = NO;
-    self.editCallback(NO);
-}
+
 @end

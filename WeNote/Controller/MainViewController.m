@@ -24,14 +24,15 @@
 }
 
 -(void)createNoteTitle{
-    NSString * titStr = @"一个两个三个四个五个六个七个八个九个十个十一个十二个";
+//    NSString * titString = [];
+    NSString * titStr = @"一个两个三个四个五个六个七个八个九个aaabbbbcccdddeeefff";
     UIFont * font = [UIFont systemFontOfSize:20];
     LimitTextView * ltv = [[LimitTextView alloc] initWithString:titStr andFont:font];
-    ltv.limitLenth = 30;
-    ltv.maxLines = 2;
+    ltv.limitLenth = 26;
+    ltv.maxLines = 4;
     [self.view addSubview:ltv];
     [ltv mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(230, 140));
+        make.size.mas_equalTo(CGSizeMake(230, 120));
         make.centerX.equalTo(self.view.mas_centerX);
         make.top.equalTo(self.view).with.offset(100);
     }];
