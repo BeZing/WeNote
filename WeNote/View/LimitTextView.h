@@ -10,10 +10,10 @@
 typedef void (^editBlock)(BOOL edit);
 
 @interface LimitTextView : UIView
-@property (nonatomic, assign) BOOL hasUnderLine;
-@property (nonatomic, assign) BOOL hasLimitLenth;
-@property (nonatomic, assign) NSInteger limitLenth;
+@property (nonatomic, assign) int minLines;
+@property (nonatomic, assign) int maxLines;
+@property (nonatomic, assign) int limitLenth;
 @property (nonatomic, copy)  editBlock editCallback;
 
--(instancetype)initWithFrame:(CGRect)frame andString:(NSString*)titStr andFont:(UIFont*)font;
+-(instancetype)initWithString:(NSString*)titStr andFont:(UIFont*)font;
 @end

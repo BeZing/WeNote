@@ -7,20 +7,24 @@
 //
 
 #import "LimitTextView.h"
+#import "HPGrowingTextView.h"
+
 #define EditImageWidth 30
-@interface LimitTextView()<UITextViewDelegate>
+@interface LimitTextView()<HPGrowingTextViewDelegate>
 @property (nonatomic, strong) NSString * text;
 @property (nonatomic, strong) UIFont * font;
-@property (nonatomic, strong) UITextView * textView;
+@property (nonatomic, strong) HPGrowingTextView * textView;
 @property (nonatomic, strong) UIButton * editBtn;
 @end
 
 @implementation LimitTextView
--(instancetype)initWithFrame:(CGRect)frame andString:(NSString*)text andFont:(UIFont*)font{
+-(instancetype)initWithString:(NSString*)text andFont:(UIFont*)font{
     self = [super init];
     if (self) {
         self.font = font;
         self.text = text;
+        self.maxLines = 1;
+        self.minLines = 1;
         self.backgroundColor = [UIColor clearColor];
     }
     return self;
@@ -28,49 +32,58 @@
 
 -(void)drawRect:(CGRect)rect{
     
-    UITextView * tv = [UITextView new];
+    HPGrowingTextView * tv = [HPGrowingTextView new];
     self.textView = tv;
-    self.textView.delegate = self;
+    self.textView.backgroundColor = [UIColor clearColor];
+    self.textView.delegate =  self;
+    
+    self.textView.font = self.font;
+    self.textView.clipsToBounds = YES;
+    self.textView.returnKeyType = UIReturnKeyDone;
     self.textView.text = self.text;
+    self.textView.editable = NO;
+    self.textView.maxNumberOfLines = self.maxLines;
+    self.textView.isScrollable = NO;
+    self.textView.internalTextView.showsVerticalScrollIndicator = NO;
+    self.textView.internalTextView.scrollEnabled = NO;
+    self.textView.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.textView];
     
-    CGSize sizeToFit = [self.textView sizeThatFits:CGSizeMake(self.bounds.size.width - EditImageWidth, MAXFLOAT)];
     [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).with.offset(0);
         make.right.equalTo(self.mas_right).with.offset(-EditImageWidth);
         make.top.equalTo(self.mas_top).with.offset(0);
-        make.size.mas_equalTo(CGSizeMake(sizeToFit.width, sizeToFit.height));
+        make.bottom.equalTo(self.mas_bottom).with.offset(0);
     }];
-    self.textView.font = self.font;
-    self.textView.editable = NO;
-    self.textView.scrollEnabled = NO;
-    self.textView.textAlignment = NSTextAlignmentCenter;
+
     
     
     UIButton * btn = [UIButton new];
     self.editBtn = btn;
-    [self addSubview:self.editBtn];
-
-    [self.editBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(EditImageWidth, EditImageWidth));
-        make.left.equalTo(self.textView.mas_right).with.offset(0);
-        make.centerY.equalTo(self.mas_centerY).with.offset(0);
-    }];
     self.editBtn.backgroundColor = [UIColor blackColor];
     [self.editBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     [self.editBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateHighlighted];
     [self.editBtn addTarget:self action:@selector(startEdit) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.editBtn];
+
+    [self.editBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(EditImageWidth, EditImageWidth));
+        make.left.equalTo(self.textView.mas_right).with.offset(5);
+        make.top.equalTo(self.mas_top).with.offset(0);
+        make.right.equalTo(self.mas_right).with.offset(0);
+    }];
+
 
 }
--(void)textViewDidChange:(UITextView *)textView{
-    if (textView.markedTextRange == nil && textView.text.length > self.limitLenth)      {
-        textView.text = [textView.text substringToIndex:self.limitLenth];
+-(void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView{
+    if (growingTextView.internalTextView.markedTextRange == nil && growingTextView.internalTextView.text.length > self.limitLenth)      {
+        growingTextView.internalTextView.text = [growingTextView.internalTextView.text substringToIndex:self.limitLenth];
     }
-    DeLog(@"%f",textView.contentOffset.y);
 }
+
 -(void)startEdit{
-    self.textView.editable = !self.textView.editable;
-    self.editCallback(self.textView.editable);
+    self.textView.editable = YES;
+    self.editCallback(YES);
 }
 -(void)endEdit{
     self.textView.editable = NO;
