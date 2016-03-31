@@ -10,11 +10,12 @@
 #import "HPGrowingTextView.h"
 
 #define EditImageWidth 30
-@interface LimitTextView()<HPGrowingTextViewDelegate>
-@property (nonatomic, strong) NSString * text;
+@interface LimitTextView()<UITextViewDelegate>
+@property (nonatomic, copy) NSString * text;
 @property (nonatomic, strong) UIFont * font;
-@property (nonatomic, strong) HPGrowingTextView * textView;
+@property (nonatomic, strong) UITextView * textView;
 @property (nonatomic, strong) UIButton * editBtn;
+@property (nonatomic, strong) UIView * bomLine;
 @end
 
 @implementation LimitTextView
@@ -23,29 +24,27 @@
     if (self) {
         self.font = font;
         self.text = text;
-        self.maxLines = 1;
-        self.minLines = 1;
-        self.backgroundColor = [UIColor clearColor];
+        self.hasBomLine = NO;
+        self.bomLineColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"edit.png"]];
+        
     }
     return self;
 }
 
 -(void)drawRect:(CGRect)rect{
-    
-    HPGrowingTextView * tv = [HPGrowingTextView new];
+
+    UITextView * tv = [UITextView new];
     self.textView = tv;
     self.textView.backgroundColor = [UIColor clearColor];
     self.textView.delegate =  self;
-    
     self.textView.font = self.font;
     self.textView.clipsToBounds = YES;
     self.textView.returnKeyType = UIReturnKeyDone;
-    self.textView.text = self.text;
+    self.textView.text = [self.text copy];
     self.textView.editable = NO;
-    self.textView.maxNumberOfLines = self.maxLines;
-    self.textView.isScrollable = NO;
-    self.textView.internalTextView.showsVerticalScrollIndicator = NO;
-    self.textView.internalTextView.scrollEnabled = NO;
+    self.textView.scrollEnabled = NO;
+    self.textView.showsVerticalScrollIndicator = NO;
     self.textView.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.textView];
     
@@ -56,13 +55,25 @@
         make.bottom.equalTo(self.mas_bottom).with.offset(0);
     }];
 
-    
+    if (self.hasBomLine) {
+        UIView * lineView = [UIView new];
+        self.bomLine = lineView;
+        self.bomLine.backgroundColor = self.bomLineColor;
+        [self addSubview:self.bomLine];
+        
+        [self.bomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.textView.mas_bottom).with.offset(0);
+            make.left.equalTo(self.textView.mas_left).with.offset(0);
+            make.size.mas_equalTo(CGSizeMake(self.bounds.size.width - EditImageWidth, 1));
+        }];
+    }
     
     UIButton * btn = [UIButton new];
     self.editBtn = btn;
-    self.editBtn.backgroundColor = [UIColor blackColor];
-    [self.editBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    [self.editBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateHighlighted];
+    [self.editBtn setImage:[UIImage imageNamed:@"edit.png"] forState:UIControlStateNormal];
+    [self.editBtn setImage:[UIImage imageNamed:@"edit.png"] forState:UIControlStateHighlighted];
+    [self.editBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 0, 0, 5)];
+
     [self.editBtn addTarget:self action:@selector(isEdit) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.editBtn];
 
@@ -73,17 +84,62 @@
         make.right.equalTo(self.mas_right).with.offset(0);
     }];
 
-
 }
--(void)growingTextViewDidChange:(HPGrowingTextView *)growingTextView{
-    if (growingTextView.internalTextView.markedTextRange == nil && growingTextView.text.length > self.limitLenth)      {
-        growingTextView.text = [growingTextView.text substringToIndex:self.limitLenth];
+
+-(void)textViewDidChange:(UITextView *)textView{
+    if (textView.markedTextRange == nil && [self convertToInt:textView.text] > self.limitLenth * 2) {
+        for (int i  = textView.text.length; i >= self.limitLenth; i--) {
+            NSString * curText = [textView.text substringToIndex:i];
+            if ([self convertToInt:curText] <= self.limitLenth*2) {
+                textView.text = curText;
+                break;
+            };
+        }
     }
+}
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    if (self.textView.text.length == 0) {
+        self.textView.text = [self.text copy];
+    }else{
+        self.text = [self.textView.text copy];
+    }
+}
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    
+    if ([text isEqualToString:@"\n"]) {
+        self.textView.editable = NO;
+        [textView resignFirstResponder];
+        return NO;
+    }
+    if ([self convertToInt:textView.text] >= self.limitLenth*2 && ![text isEqualToString:@""]) {
+        return NO;
+    }
+    return YES;
+}
+
+- (int)convertToInt:(NSString*)strtemp {
+    int strlength = 0;
+    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return strlength;
 }
 
 -(void)isEdit{
     self.textView.editable = !self.textView.editable;
-    self.editCallback(self.textView.editable);
+    if (self.textView.editable) {
+        [self.textView becomeFirstResponder];
+    }else{
+        [self.textView resignFirstResponder];
+        self.editCallback(self.textView.text);
+    }
 }
 
 @end

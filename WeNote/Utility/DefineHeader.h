@@ -28,5 +28,9 @@
 
 #define IOSEightOrLater [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
 
+#define ScreenWidth   [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight  [[UIScreen mainScreen] bounds].size.height
 
+#define SelfWidth        self.view.bounds.size.width
+#define SelfHeight       self.view.bounds.size.height
 #endif /* DefineHeader_h */

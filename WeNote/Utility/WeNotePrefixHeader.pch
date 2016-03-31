@@ -8,7 +8,7 @@
 #import "Masonry.h"
 #import "DefineHeader.h"
 #import "Utilities.h"
-#import "NetWork.h"
+#import "NetManager.h"
 
 
 

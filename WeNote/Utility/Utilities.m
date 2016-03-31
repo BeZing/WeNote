@@ -304,7 +304,7 @@
 }
 
 +(UIFont*)getSysemFont:(NSString*)textStyle{
-    UIFont * font = [[NSUserDefaults standardUserDefaults] objectForKey:CUSFONTKEY];
+    UIFont * font = [[NSUserDefaults standardUserDefaults] objectForKey:NOTE_FONT_KEY];
     if (!font) {
         font = [UIFont preferredFontForTextStyle:textStyle];
     }

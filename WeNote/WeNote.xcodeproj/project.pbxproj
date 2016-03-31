@@ -53,7 +53,7 @@
 		9258501F1CA90809007B1AC6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9258501E1CA90809007B1AC6 /* MainViewController.m */; };
 		925850271CA90D99007B1AC6 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850251CA90D99007B1AC6 /* Utilities.m */; };
 		9258502A1CA91BD8007B1AC6 /* LimitTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850291CA91BD8007B1AC6 /* LimitTextView.m */; };
-		9258502E1CAA2500007B1AC6 /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 9258502D1CAA2500007B1AC6 /* NetWork.m */; };
+		9258502E1CAA2500007B1AC6 /* NetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9258502D1CAA2500007B1AC6 /* NetManager.m */; };
 		9258503A1CAA2C25007B1AC6 /* YYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850361CAA2C25007B1AC6 /* YYLabel.m */; };
 		9258503B1CAA2C25007B1AC6 /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850391CAA2C25007B1AC6 /* YYTextView.m */; };
 		9258504D1CAA2C5D007B1AC6 /* NSAttributedString+YYText.m in Sources */ = {isa = PBXBuildFile; fileRef = 9258503E1CAA2C5D007B1AC6 /* NSAttributedString+YYText.m */; };
@@ -86,6 +86,7 @@
 		925850961CAA5C12007B1AC6 /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850931CAA5C12007B1AC6 /* HPGrowingTextView.m */; };
 		925850971CAA5C12007B1AC6 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850951CAA5C12007B1AC6 /* HPTextViewInternal.m */; };
 		925850991CAA5DF3007B1AC6 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 925850981CAA5DF3007B1AC6 /* libz.1.2.5.tbd */; };
+		9258509B1CAB5EC4007B1AC6 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258509A1CAB5EC4007B1AC6 /* edit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,8 +189,8 @@
 		925850281CA91BD8007B1AC6 /* LimitTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LimitTextView.h; path = View/LimitTextView.h; sourceTree = "<group>"; };
 		925850291CA91BD8007B1AC6 /* LimitTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LimitTextView.m; path = View/LimitTextView.m; sourceTree = "<group>"; };
 		9258502B1CA9219E007B1AC6 /* WeNotePrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WeNotePrefixHeader.pch; path = Utility/WeNotePrefixHeader.pch; sourceTree = "<group>"; };
-		9258502C1CAA2500007B1AC6 /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetWork.h; path = Utility/NetWork.h; sourceTree = "<group>"; };
-		9258502D1CAA2500007B1AC6 /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetWork.m; path = Utility/NetWork.m; sourceTree = "<group>"; };
+		9258502C1CAA2500007B1AC6 /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetManager.h; path = Utility/NetManager.h; sourceTree = "<group>"; };
+		9258502D1CAA2500007B1AC6 /* NetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetManager.m; path = Utility/NetManager.m; sourceTree = "<group>"; };
 		925850301CAA2651007B1AC6 /* KeyDefineHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyDefineHeader.h; path = Utility/KeyDefineHeader.h; sourceTree = "<group>"; };
 		925850351CAA2C25007B1AC6 /* YYLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YYLabel.h; path = ThirdParty/YYText/YYLabel.h; sourceTree = "<group>"; };
 		925850361CAA2C25007B1AC6 /* YYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YYLabel.m; path = ThirdParty/YYText/YYLabel.m; sourceTree = "<group>"; };
@@ -255,6 +256,7 @@
 		925850941CAA5C12007B1AC6 /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HPTextViewInternal.h; path = ThirdParty/HPTextInput/HPTextViewInternal.h; sourceTree = "<group>"; };
 		925850951CAA5C12007B1AC6 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = ThirdParty/HPTextInput/HPTextViewInternal.m; sourceTree = "<group>"; };
 		925850981CAA5DF3007B1AC6 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		9258509A1CAB5EC4007B1AC6 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = Resource/edit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,8 +359,8 @@
 				925850231CA90D99007B1AC6 /* DefineHeader.h */,
 				925850301CAA2651007B1AC6 /* KeyDefineHeader.h */,
 				9258502B1CA9219E007B1AC6 /* WeNotePrefixHeader.pch */,
-				9258502C1CAA2500007B1AC6 /* NetWork.h */,
-				9258502D1CAA2500007B1AC6 /* NetWork.m */,
+				9258502C1CAA2500007B1AC6 /* NetManager.h */,
+				9258502D1CAA2500007B1AC6 /* NetManager.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -366,6 +368,7 @@
 		92584F9B1CA8D270007B1AC6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9258509A1CAB5EC4007B1AC6 /* edit.png */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92584F8F1CA8CB56007B1AC6 /* LaunchScreen.storyboard in Resources */,
+				9258509B1CAB5EC4007B1AC6 /* edit.png in Resources */,
 				92584F8C1CA8CB56007B1AC6 /* Assets.xcassets in Resources */,
 				92584F8A1CA8CB56007B1AC6 /* Main.storyboard in Resources */,
 			);
@@ -701,7 +705,7 @@
 				92584FDA1CA8D2E9007B1AC6 /* UIButton+WebCache.m in Sources */,
 				92584FD91CA8D2E9007B1AC6 /* SDWebImagePrefetcher.m in Sources */,
 				92584FEE1CA8D2FE007B1AC6 /* AFHTTPSessionManager.m in Sources */,
-				9258502E1CAA2500007B1AC6 /* NetWork.m in Sources */,
+				9258502E1CAA2500007B1AC6 /* NetManager.m in Sources */,
 				9258502A1CA91BD8007B1AC6 /* LimitTextView.m in Sources */,
 				925850141CA8D4F9007B1AC6 /* MASViewAttribute.m in Sources */,
 				92584FD71CA8D2E9007B1AC6 /* SDWebImageDownloaderOperation.m in Sources */,

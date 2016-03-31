@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^editBlock)(BOOL edit);
+typedef void (^editBlock)(NSString* info);
 
 @interface LimitTextView : UIView
-@property (nonatomic, assign) int minLines;
-@property (nonatomic, assign) int maxLines;
 @property (nonatomic, assign) int limitLenth;
+@property (nonatomic, assign) BOOL hasBomLine;
+@property (nonatomic, strong) UIColor * bomLineColor;
 @property (nonatomic, copy)  editBlock editCallback;
 
 -(instancetype)initWithString:(NSString*)titStr andFont:(UIFont*)font;
