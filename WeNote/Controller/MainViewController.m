@@ -62,14 +62,14 @@
 
                     break;
                 case 2:
-                    make.size.mas_equalTo(CGSizeMake(SelfWidth - 100, 40));
+                    make.size.mas_equalTo(CGSizeMake(SelfWidth - 200, 40));
                     make.centerX.equalTo(self.view.mas_centerX);
                     make.bottom.equalTo(self.view).with.offset(-100);
                     infoKey = NOTE_TAG_KEY;
 
                     break;
                 case 3:
-                    make.size.mas_equalTo(CGSizeMake(SelfWidth - 100, 40));
+                    make.size.mas_equalTo(CGSizeMake(SelfWidth - 200, 40));
                     make.centerX.equalTo(self.view.mas_centerX);
                     make.bottom.equalTo(self.view).with.offset(-40);
                     infoKey = NOTE_USER_KEY;

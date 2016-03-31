@@ -87,10 +87,10 @@
 }
 
 -(void)textViewDidChange:(UITextView *)textView{
-    if (textView.markedTextRange == nil && [self convertToInt:textView.text] > self.limitLenth * 2) {
+    if (textView.markedTextRange == nil && [self getByteLenth:textView.text] > self.limitLenth * 2) {
         for (int i  = textView.text.length; i >= self.limitLenth; i--) {
             NSString * curText = [textView.text substringToIndex:i];
-            if ([self convertToInt:curText] <= self.limitLenth*2) {
+            if ([self getByteLenth:curText] <= self.limitLenth*2) {
                 textView.text = curText;
                 break;
             };
@@ -111,25 +111,10 @@
         [textView resignFirstResponder];
         return NO;
     }
-    if ([self convertToInt:textView.text] >= self.limitLenth*2 && ![text isEqualToString:@""]) {
+    if ([self getByteLenth:textView.text] > self.limitLenth*2 && ![text isEqualToString:@""]) {
         return NO;
     }
     return YES;
-}
-
-- (int)convertToInt:(NSString*)strtemp {
-    int strlength = 0;
-    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
-    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
-        if (*p) {
-            p++;
-            strlength++;
-        }
-        else {
-            p++;
-        }
-    }
-    return strlength;
 }
 
 -(void)isEdit{
@@ -141,5 +126,17 @@
         self.editCallback(self.textView.text);
     }
 }
-
+- (int)getByteLenth:(NSString*)strtemp {
+    int strlength = 0;
+    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }else {
+            p++;
+        }
+    }
+    return strlength;
+}
 @end
