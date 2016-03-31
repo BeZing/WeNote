@@ -34,7 +34,7 @@
     [ud synchronize];
     _textArr = @[[ud objectForKey:NOTE_TITLE_KEY],[ud objectForKey:NOTE_ADMO_KEY],[ud  objectForKey:NOTE_TAG_KEY],[ud objectForKey:NOTE_USER_KEY]];
     _fontArr = @[[UIFont systemFontOfSize:20],[UIFont systemFontOfSize:14],[UIFont systemFontOfSize:16],[UIFont systemFontOfSize:16]];
-    _lentArr = @[@"16",@"30",@"7",@"7"];
+    _lentArr = @[@"16",@"60",@"8",@"8"];
 }
 
 -(void)createNoteTitle{
@@ -54,7 +54,7 @@
                     infoKey = NOTE_TITLE_KEY;
                     break;
                 case 1:
-                    make.size.mas_equalTo(CGSizeMake(SelfWidth - 60, 88));
+                    make.size.mas_equalTo(CGSizeMake(SelfWidth - 40, 88));
                     make.centerX.equalTo(self.view.mas_centerX);
                     make.top.equalTo(self.view).with.offset(200);
                     

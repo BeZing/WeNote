@@ -26,6 +26,9 @@
         self.text = text;
         self.hasBomLine = NO;
         self.bomLineColor = [UIColor lightGrayColor];
+        self.editImg = [UIImage imageNamed:DefaultImageName];
+        self.heiImg = [UIImage imageNamed:DefaultImageName];
+        self.selectImg = [UIImage imageNamed:DefaultImageName];
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"edit.png"]];
         
     }
@@ -70,11 +73,12 @@
     
     UIButton * btn = [UIButton new];
     self.editBtn = btn;
-    [self.editBtn setImage:[UIImage imageNamed:@"edit.png"] forState:UIControlStateNormal];
-    [self.editBtn setImage:[UIImage imageNamed:@"edit.png"] forState:UIControlStateHighlighted];
+    [self.editBtn setImage:self.editImg forState:UIControlStateNormal];
+    [self.editBtn setImage:self.heiImg forState:UIControlStateHighlighted];
+    [self.editBtn setImage:self.selectImg forState:UIControlStateSelected];
     [self.editBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 0, 0, 5)];
 
-    [self.editBtn addTarget:self action:@selector(isEdit) forControlEvents:UIControlEventTouchUpInside];
+    [self.editBtn addTarget:self action:@selector(isEdit:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.editBtn];
 
     [self.editBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -117,11 +121,13 @@
     return YES;
 }
 
--(void)isEdit{
+-(void)isEdit:(UIButton *)sender{
     self.textView.editable = !self.textView.editable;
     if (self.textView.editable) {
+        sender.selected  = YES;
         [self.textView becomeFirstResponder];
     }else{
+        sender.selected = NO;
         [self.textView resignFirstResponder];
         self.editCallback(self.textView.text);
     }

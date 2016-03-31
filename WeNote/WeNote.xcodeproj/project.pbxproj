@@ -87,6 +87,7 @@
 		925850971CAA5C12007B1AC6 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850951CAA5C12007B1AC6 /* HPTextViewInternal.m */; };
 		925850991CAA5DF3007B1AC6 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 925850981CAA5DF3007B1AC6 /* libz.1.2.5.tbd */; };
 		9258509B1CAB5EC4007B1AC6 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258509A1CAB5EC4007B1AC6 /* edit.png */; };
+		925850A21CACC86C007B1AC6 /* SelectBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850A11CACC86C007B1AC6 /* SelectBtn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,6 +258,8 @@
 		925850951CAA5C12007B1AC6 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = ThirdParty/HPTextInput/HPTextViewInternal.m; sourceTree = "<group>"; };
 		925850981CAA5DF3007B1AC6 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		9258509A1CAB5EC4007B1AC6 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = Resource/edit.png; sourceTree = "<group>"; };
+		925850A01CACC86C007B1AC6 /* SelectBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectBtn.h; path = View/SelectBtn.h; sourceTree = "<group>"; };
+		925850A11CACC86C007B1AC6 /* SelectBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectBtn.m; path = View/SelectBtn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +350,8 @@
 			children = (
 				925850281CA91BD8007B1AC6 /* LimitTextView.h */,
 				925850291CA91BD8007B1AC6 /* LimitTextView.m */,
+				925850A01CACC86C007B1AC6 /* SelectBtn.h */,
+				925850A11CACC86C007B1AC6 /* SelectBtn.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -692,6 +697,7 @@
 				925850181CA8D4F9007B1AC6 /* View+MASAdditions.m in Sources */,
 				925850101CA8D4F9007B1AC6 /* MASCompositeConstraint.m in Sources */,
 				92584FDE1CA8D2E9007B1AC6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				925850A21CACC86C007B1AC6 /* SelectBtn.m in Sources */,
 				925850791CAA2CAC007B1AC6 /* YYTextDebugOption.m in Sources */,
 				9258507D1CAA2CAC007B1AC6 /* YYTextLayout.m in Sources */,
 				925850781CAA2CAC007B1AC6 /* YYTextContainerView.m in Sources */,

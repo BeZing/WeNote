@@ -9,6 +9,8 @@
 #ifndef KeyDefineHeader_h
 #define KeyDefineHeader_h
 
+#define DefaultImageName        @"defaultImage"
+
 #define NOTE_FONT_KEY         @"NoteFontKey"
 #define NOTE_TITLE_KEY         @"NoteTitleKey"
 #define NOTE_USER_KEY         @"NoteUserKey"
