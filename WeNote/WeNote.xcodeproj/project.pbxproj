@@ -87,7 +87,12 @@
 		925850971CAA5C12007B1AC6 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850951CAA5C12007B1AC6 /* HPTextViewInternal.m */; };
 		925850991CAA5DF3007B1AC6 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 925850981CAA5DF3007B1AC6 /* libz.1.2.5.tbd */; };
 		9258509B1CAB5EC4007B1AC6 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9258509A1CAB5EC4007B1AC6 /* edit.png */; };
-		925850A21CACC86C007B1AC6 /* SelectBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850A11CACC86C007B1AC6 /* SelectBtn.m */; };
+		925850A21CACC86C007B1AC6 /* SelectBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850A11CACC86C007B1AC6 /* SelectBtnView.m */; };
+		925850A51CB35169007B1AC6 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850A41CB35169007B1AC6 /* DataStorage.m */; };
+		925850A81CB38ADB007B1AC6 /* ToolItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850A71CB38ADB007B1AC6 /* ToolItemView.m */; };
+		925850AE1CB399D9007B1AC6 /* EditTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850AD1CB399D9007B1AC6 /* EditTextView.m */; };
+		925850B11CB3A391007B1AC6 /* NoteImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850B01CB3A391007B1AC6 /* NoteImageView.m */; };
+		925850B41CB3AFD5007B1AC6 /* NoteImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850B31CB3AFD5007B1AC6 /* NoteImageEditor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -258,8 +263,18 @@
 		925850951CAA5C12007B1AC6 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HPTextViewInternal.m; path = ThirdParty/HPTextInput/HPTextViewInternal.m; sourceTree = "<group>"; };
 		925850981CAA5DF3007B1AC6 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		9258509A1CAB5EC4007B1AC6 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = Resource/edit.png; sourceTree = "<group>"; };
-		925850A01CACC86C007B1AC6 /* SelectBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectBtn.h; path = View/SelectBtn.h; sourceTree = "<group>"; };
-		925850A11CACC86C007B1AC6 /* SelectBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectBtn.m; path = View/SelectBtn.m; sourceTree = "<group>"; };
+		925850A01CACC86C007B1AC6 /* SelectBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectBtnView.h; path = View/SelectBtnView.h; sourceTree = "<group>"; };
+		925850A11CACC86C007B1AC6 /* SelectBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectBtnView.m; path = View/SelectBtnView.m; sourceTree = "<group>"; };
+		925850A31CB35169007B1AC6 /* DataStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataStorage.h; path = Utility/DataStorage.h; sourceTree = "<group>"; };
+		925850A41CB35169007B1AC6 /* DataStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataStorage.m; path = Utility/DataStorage.m; sourceTree = "<group>"; };
+		925850A61CB38ADB007B1AC6 /* ToolItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolItemView.h; path = View/ToolItemView.h; sourceTree = "<group>"; };
+		925850A71CB38ADB007B1AC6 /* ToolItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToolItemView.m; path = View/ToolItemView.m; sourceTree = "<group>"; };
+		925850AC1CB399D9007B1AC6 /* EditTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditTextView.h; path = View/EditTextView.h; sourceTree = "<group>"; };
+		925850AD1CB399D9007B1AC6 /* EditTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditTextView.m; path = View/EditTextView.m; sourceTree = "<group>"; };
+		925850AF1CB3A391007B1AC6 /* NoteImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteImageView.h; path = View/NoteImageView.h; sourceTree = "<group>"; };
+		925850B01CB3A391007B1AC6 /* NoteImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteImageView.m; path = View/NoteImageView.m; sourceTree = "<group>"; };
+		925850B21CB3AFD5007B1AC6 /* NoteImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteImageEditor.h; path = View/NoteImageEditor.h; sourceTree = "<group>"; };
+		925850B31CB3AFD5007B1AC6 /* NoteImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteImageEditor.m; path = View/NoteImageEditor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,8 +365,16 @@
 			children = (
 				925850281CA91BD8007B1AC6 /* LimitTextView.h */,
 				925850291CA91BD8007B1AC6 /* LimitTextView.m */,
-				925850A01CACC86C007B1AC6 /* SelectBtn.h */,
-				925850A11CACC86C007B1AC6 /* SelectBtn.m */,
+				925850A01CACC86C007B1AC6 /* SelectBtnView.h */,
+				925850A11CACC86C007B1AC6 /* SelectBtnView.m */,
+				925850A61CB38ADB007B1AC6 /* ToolItemView.h */,
+				925850A71CB38ADB007B1AC6 /* ToolItemView.m */,
+				925850AC1CB399D9007B1AC6 /* EditTextView.h */,
+				925850AD1CB399D9007B1AC6 /* EditTextView.m */,
+				925850AF1CB3A391007B1AC6 /* NoteImageView.h */,
+				925850B01CB3A391007B1AC6 /* NoteImageView.m */,
+				925850B21CB3AFD5007B1AC6 /* NoteImageEditor.h */,
+				925850B31CB3AFD5007B1AC6 /* NoteImageEditor.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -366,6 +389,8 @@
 				9258502B1CA9219E007B1AC6 /* WeNotePrefixHeader.pch */,
 				9258502C1CAA2500007B1AC6 /* NetManager.h */,
 				9258502D1CAA2500007B1AC6 /* NetManager.m */,
+				925850A31CB35169007B1AC6 /* DataStorage.h */,
+				925850A41CB35169007B1AC6 /* DataStorage.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -696,8 +721,9 @@
 				9258508D1CAA2CC2007B1AC6 /* YYFrameImage.m in Sources */,
 				925850181CA8D4F9007B1AC6 /* View+MASAdditions.m in Sources */,
 				925850101CA8D4F9007B1AC6 /* MASCompositeConstraint.m in Sources */,
+				925850AE1CB399D9007B1AC6 /* EditTextView.m in Sources */,
 				92584FDE1CA8D2E9007B1AC6 /* UIImageView+HighlightedWebCache.m in Sources */,
-				925850A21CACC86C007B1AC6 /* SelectBtn.m in Sources */,
+				925850A21CACC86C007B1AC6 /* SelectBtnView.m in Sources */,
 				925850791CAA2CAC007B1AC6 /* YYTextDebugOption.m in Sources */,
 				9258507D1CAA2CAC007B1AC6 /* YYTextLayout.m in Sources */,
 				925850781CAA2CAC007B1AC6 /* YYTextContainerView.m in Sources */,
@@ -724,6 +750,7 @@
 				9258507B1CAA2CAC007B1AC6 /* YYTextInput.m in Sources */,
 				925850531CAA2C5D007B1AC6 /* YYTextUtilities.m in Sources */,
 				92584FEF1CA8D2FE007B1AC6 /* AFNetworkReachabilityManager.m in Sources */,
+				925850A51CB35169007B1AC6 /* DataStorage.m in Sources */,
 				92584FAE1CA8D2DA007B1AC6 /* FMDatabaseQueue.m in Sources */,
 				925850121CA8D4F9007B1AC6 /* MASConstraintMaker.m in Sources */,
 				92584F811CA8CB56007B1AC6 /* main.m in Sources */,
@@ -739,6 +766,7 @@
 				92584FF21CA8D2FE007B1AC6 /* AFURLResponseSerialization.m in Sources */,
 				925850271CA90D99007B1AC6 /* Utilities.m in Sources */,
 				92584FF11CA8D2FE007B1AC6 /* AFURLRequestSerialization.m in Sources */,
+				925850B41CB3AFD5007B1AC6 /* NoteImageEditor.m in Sources */,
 				925850171CA8D4F9007B1AC6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				92584FAB1CA8D2DA007B1AC6 /* FMDatabase.m in Sources */,
 				9258504D1CAA2C5D007B1AC6 /* NSAttributedString+YYText.m in Sources */,
@@ -749,6 +777,8 @@
 				925850131CA8D4F9007B1AC6 /* MASLayoutConstraint.m in Sources */,
 				92584FAC1CA8D2DA007B1AC6 /* FMDatabaseAdditions.m in Sources */,
 				9258507F1CAA2CAC007B1AC6 /* YYTextMagnifier.m in Sources */,
+				925850B11CB3A391007B1AC6 /* NoteImageView.m in Sources */,
+				925850A81CB38ADB007B1AC6 /* ToolItemView.m in Sources */,
 				925850631CAA2C91007B1AC6 /* YYTextRubyAnnotation.m in Sources */,
 				92584FDB1CA8D2E9007B1AC6 /* UIImage+GIF.m in Sources */,
 				92584FD61CA8D2E9007B1AC6 /* SDWebImageDownloader.m in Sources */,
@@ -914,6 +944,7 @@
 				92584F951CA8CB56007B1AC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

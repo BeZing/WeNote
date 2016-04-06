@@ -68,6 +68,7 @@ static NetManager * manager = nil;
         }
     } failure:^(NSURLSessionDataTask *  task, NSError *  error) {
         if (failure) {
+            ErrLog(@"%@",error);
             failure(error);
         }
     }];

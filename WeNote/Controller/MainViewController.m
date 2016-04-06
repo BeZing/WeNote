@@ -41,8 +41,11 @@
 //    NSString * titString = [];
     //iphone name " "前，如果长，空格后。如果还是长，默认@"xxxxx";
     for (int i = 0; i < _textArr.count; i ++) {
-        LimitTextView * titText = [[LimitTextView alloc] initWithString:_textArr[i] andFont:_fontArr[i]];
+        LimitTextView * titText = [LimitTextView new];
         titText.limitLenth = [_lentArr[i] intValue];
+        titText.text = _textArr[i];
+        titText.font = _fontArr[i];
+        titText.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:titText];
         __block NSString * infoKey;
         [titText mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,7 +60,6 @@
                     make.size.mas_equalTo(CGSizeMake(SelfWidth - 40, 88));
                     make.centerX.equalTo(self.view.mas_centerX);
                     make.top.equalTo(self.view).with.offset(200);
-                    
                     infoKey = NOTE_ADMO_KEY;
 
                     break;
@@ -66,6 +68,7 @@
                     make.centerX.equalTo(self.view.mas_centerX);
                     make.bottom.equalTo(self.view).with.offset(-100);
                     infoKey = NOTE_TAG_KEY;
+                    titText.bomLineColor = [UIColor lightGrayColor];
 
                     break;
                 case 3:
@@ -73,6 +76,7 @@
                     make.centerX.equalTo(self.view.mas_centerX);
                     make.bottom.equalTo(self.view).with.offset(-40);
                     infoKey = NOTE_USER_KEY;
+                    titText.bomLineColor = [UIColor lightGrayColor];
 
                     break;
                 default:

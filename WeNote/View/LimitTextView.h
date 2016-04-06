@@ -11,6 +11,8 @@ typedef void (^editBlock)(NSString* info);
 
 @interface LimitTextView : UIView
 
+@property (nonatomic, strong) UIFont * font;
+@property (nonatomic, strong) NSString * text;
 @property (nonatomic, assign) int limitLenth;
 @property (nonatomic, assign) BOOL hasBomLine;
 @property (nonatomic, strong) UIColor * bomLineColor;
@@ -18,5 +20,5 @@ typedef void (^editBlock)(NSString* info);
 @property (nonatomic, strong) UIImage * editImg;
 @property (nonatomic, strong) UIImage * heiImg;
 @property (nonatomic, strong) UIImage * selectImg;
--(instancetype)initWithString:(NSString*)titStr andFont:(UIFont*)font;
+@property (nonatomic, assign) NSTextAlignment  textAlignment;
 @end
