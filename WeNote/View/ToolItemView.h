@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^btnCallback)(NSInteger back);
+typedef void(^btnCallback)(NSString* item);
 @interface ToolItemView : UIView
-@property (nonatomic, strong) NSArray * items;
-@property (nonatomic, strong) NSArray * nomPicNameArr;
-@property (nonatomic, strong) NSArray * heiPicNameArr;
+@property (nonatomic, strong) NSArray * nomPicArr;
+@property (nonatomic, strong) NSArray * heiPicArr;
+@property (nonatomic, assign) CGFloat spaceHei;
 @property (nonatomic, copy) btnCallback clickback;
+
+-(instancetype)initWithFrame:(CGRect)frame andItems:(NSArray*)items;
 @end

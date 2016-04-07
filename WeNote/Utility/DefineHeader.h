@@ -9,7 +9,7 @@
 #ifndef DefineHeader_h
 #define DefineHeader_h
 
-
+#define PhotoNum 5
 
 
 #ifdef DEBUG
@@ -31,6 +31,9 @@
 #define ScreenWidth   [[UIScreen mainScreen] bounds].size.width
 #define ScreenHeight  [[UIScreen mainScreen] bounds].size.height
 
-#define SelfWidth        self.view.bounds.size.width
-#define SelfHeight       self.view.bounds.size.height
+#define SVWidth        self.view.bounds.size.width
+#define SVHeight       self.view.bounds.size.height
+
+#define SBWidth        self.bounds.size.width
+#define SBHeight       self.bounds.size.height
 #endif /* DefineHeader_h */

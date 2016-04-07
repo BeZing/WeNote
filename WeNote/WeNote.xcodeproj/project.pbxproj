@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923611B51CB4F5BF0090F0BE /* NoteTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 923611B41CB4F5BF0090F0BE /* NoteTextView.m */; };
+		923611B81CB4F5DF0090F0BE /* NoteTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 923611B71CB4F5DF0090F0BE /* NoteTextStorage.m */; };
+		923611BB1CB4F5FF0090F0BE /* NoteTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 923611BA1CB4F5FF0090F0BE /* NoteTextContainer.m */; };
+		923611BE1CB4F61D0090F0BE /* NoteLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 923611BD1CB4F61D0090F0BE /* NoteLayoutManager.m */; };
+		923611C11CB4F8850090F0BE /* NoteMuString.m in Sources */ = {isa = PBXBuildFile; fileRef = 923611C01CB4F8850090F0BE /* NoteMuString.m */; };
 		92584F811CA8CB56007B1AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92584F801CA8CB56007B1AC6 /* main.m */; };
 		92584F841CA8CB56007B1AC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92584F831CA8CB56007B1AC6 /* AppDelegate.m */; };
 		92584F8A1CA8CB56007B1AC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92584F881CA8CB56007B1AC6 /* Main.storyboard */; };
@@ -93,9 +98,22 @@
 		925850AE1CB399D9007B1AC6 /* EditTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850AD1CB399D9007B1AC6 /* EditTextView.m */; };
 		925850B11CB3A391007B1AC6 /* NoteImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850B01CB3A391007B1AC6 /* NoteImageView.m */; };
 		925850B41CB3AFD5007B1AC6 /* NoteImageEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 925850B31CB3AFD5007B1AC6 /* NoteImageEditor.m */; };
+		92BD76361CB5F7AB009A789A /* NoteRegularManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BD76351CB5F7AB009A789A /* NoteRegularManager.m */; };
+		92BD76381CB64C3A009A789A /* moon.txt in Resources */ = {isa = PBXBuildFile; fileRef = 92BD76371CB64C3A009A789A /* moon.txt */; };
+		92BD763A1CB657F2009A789A /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 92BD76391CB657F2009A789A /* btn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923611B31CB4F5BF0090F0BE /* NoteTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteTextView.h; path = View/NoteTextView/NoteTextView.h; sourceTree = "<group>"; };
+		923611B41CB4F5BF0090F0BE /* NoteTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteTextView.m; path = View/NoteTextView/NoteTextView.m; sourceTree = "<group>"; };
+		923611B61CB4F5DF0090F0BE /* NoteTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteTextStorage.h; path = View/NoteTextView/NoteTextStorage.h; sourceTree = "<group>"; };
+		923611B71CB4F5DF0090F0BE /* NoteTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteTextStorage.m; path = View/NoteTextView/NoteTextStorage.m; sourceTree = "<group>"; };
+		923611B91CB4F5FF0090F0BE /* NoteTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteTextContainer.h; path = View/NoteTextView/NoteTextContainer.h; sourceTree = "<group>"; };
+		923611BA1CB4F5FF0090F0BE /* NoteTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteTextContainer.m; path = View/NoteTextView/NoteTextContainer.m; sourceTree = "<group>"; };
+		923611BC1CB4F61D0090F0BE /* NoteLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteLayoutManager.h; path = View/NoteTextView/NoteLayoutManager.h; sourceTree = "<group>"; };
+		923611BD1CB4F61D0090F0BE /* NoteLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteLayoutManager.m; path = View/NoteTextView/NoteLayoutManager.m; sourceTree = "<group>"; };
+		923611BF1CB4F8850090F0BE /* NoteMuString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteMuString.h; path = View/NoteTextView/NoteMuString.h; sourceTree = "<group>"; };
+		923611C01CB4F8850090F0BE /* NoteMuString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteMuString.m; path = View/NoteTextView/NoteMuString.m; sourceTree = "<group>"; };
 		92584F7C1CA8CB56007B1AC6 /* WeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92584F801CA8CB56007B1AC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		92584F821CA8CB56007B1AC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -275,6 +293,10 @@
 		925850B01CB3A391007B1AC6 /* NoteImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteImageView.m; path = View/NoteImageView.m; sourceTree = "<group>"; };
 		925850B21CB3AFD5007B1AC6 /* NoteImageEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteImageEditor.h; path = View/NoteImageEditor.h; sourceTree = "<group>"; };
 		925850B31CB3AFD5007B1AC6 /* NoteImageEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteImageEditor.m; path = View/NoteImageEditor.m; sourceTree = "<group>"; };
+		92BD76341CB5F7AB009A789A /* NoteRegularManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteRegularManager.h; path = View/NoteTextView/NoteRegularManager.h; sourceTree = "<group>"; };
+		92BD76351CB5F7AB009A789A /* NoteRegularManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteRegularManager.m; path = View/NoteTextView/NoteRegularManager.m; sourceTree = "<group>"; };
+		92BD76371CB64C3A009A789A /* moon.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = moon.txt; sourceTree = "<group>"; };
+		92BD76391CB657F2009A789A /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +312,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		923611B21CB4F5390090F0BE /* NoteTextView */ = {
+			isa = PBXGroup;
+			children = (
+				923611B31CB4F5BF0090F0BE /* NoteTextView.h */,
+				923611B41CB4F5BF0090F0BE /* NoteTextView.m */,
+				923611B61CB4F5DF0090F0BE /* NoteTextStorage.h */,
+				923611B71CB4F5DF0090F0BE /* NoteTextStorage.m */,
+				923611BF1CB4F8850090F0BE /* NoteMuString.h */,
+				923611C01CB4F8850090F0BE /* NoteMuString.m */,
+				923611B91CB4F5FF0090F0BE /* NoteTextContainer.h */,
+				923611BA1CB4F5FF0090F0BE /* NoteTextContainer.m */,
+				923611BC1CB4F61D0090F0BE /* NoteLayoutManager.h */,
+				923611BD1CB4F61D0090F0BE /* NoteLayoutManager.m */,
+				92BD76341CB5F7AB009A789A /* NoteRegularManager.h */,
+				92BD76351CB5F7AB009A789A /* NoteRegularManager.m */,
+			);
+			name = NoteTextView;
+			sourceTree = "<group>";
+		};
 		92584F731CA8CB56007B1AC6 = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +404,7 @@
 		92584F991CA8D263007B1AC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				923611B21CB4F5390090F0BE /* NoteTextView */,
 				925850281CA91BD8007B1AC6 /* LimitTextView.h */,
 				925850291CA91BD8007B1AC6 /* LimitTextView.m */,
 				925850A01CACC86C007B1AC6 /* SelectBtnView.h */,
@@ -398,6 +440,8 @@
 		92584F9B1CA8D270007B1AC6 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				92BD76391CB657F2009A789A /* btn.png */,
+				92BD76371CB64C3A009A789A /* moon.txt */,
 				9258509A1CAB5EC4007B1AC6 /* edit.png */,
 			);
 			name = Resource;
@@ -692,10 +736,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92BD763A1CB657F2009A789A /* btn.png in Resources */,
 				92584F8F1CA8CB56007B1AC6 /* LaunchScreen.storyboard in Resources */,
 				9258509B1CAB5EC4007B1AC6 /* edit.png in Resources */,
 				92584F8C1CA8CB56007B1AC6 /* Assets.xcassets in Resources */,
 				92584F8A1CA8CB56007B1AC6 /* Main.storyboard in Resources */,
+				92BD76381CB64C3A009A789A /* moon.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +779,7 @@
 				9258504F1CAA2C5D007B1AC6 /* UIPasteboard+YYText.m in Sources */,
 				925850611CAA2C91007B1AC6 /* YYTextAttribute.m in Sources */,
 				92584FF01CA8D2FE007B1AC6 /* AFSecurityPolicy.m in Sources */,
+				923611C11CB4F8850090F0BE /* NoteMuString.m in Sources */,
 				925850521CAA2C5D007B1AC6 /* YYTextTransaction.m in Sources */,
 				92584FDA1CA8D2E9007B1AC6 /* UIButton+WebCache.m in Sources */,
 				92584FD91CA8D2E9007B1AC6 /* SDWebImagePrefetcher.m in Sources */,
@@ -744,10 +791,13 @@
 				925850621CAA2C91007B1AC6 /* YYTextParser.m in Sources */,
 				9258508E1CAA2CC2007B1AC6 /* YYImage.m in Sources */,
 				925850501CAA2C5D007B1AC6 /* UIView+YYText.m in Sources */,
+				923611B81CB4F5DF0090F0BE /* NoteTextStorage.m in Sources */,
 				925850111CA8D4F9007B1AC6 /* MASConstraint.m in Sources */,
 				9258503A1CAA2C25007B1AC6 /* YYLabel.m in Sources */,
+				923611BE1CB4F61D0090F0BE /* NoteLayoutManager.m in Sources */,
 				92584FF31CA8D2FE007B1AC6 /* AFURLSessionManager.m in Sources */,
 				9258507B1CAA2CAC007B1AC6 /* YYTextInput.m in Sources */,
+				923611BB1CB4F5FF0090F0BE /* NoteTextContainer.m in Sources */,
 				925850531CAA2C5D007B1AC6 /* YYTextUtilities.m in Sources */,
 				92584FEF1CA8D2FE007B1AC6 /* AFNetworkReachabilityManager.m in Sources */,
 				925850A51CB35169007B1AC6 /* DataStorage.m in Sources */,
@@ -762,11 +812,13 @@
 				9258503B1CAA2C25007B1AC6 /* YYTextView.m in Sources */,
 				9258508F1CAA2CC2007B1AC6 /* YYImageCoder.m in Sources */,
 				925850971CAA5C12007B1AC6 /* HPTextViewInternal.m in Sources */,
+				923611B51CB4F5BF0090F0BE /* NoteTextView.m in Sources */,
 				925850601CAA2C91007B1AC6 /* YYTextArchiver.m in Sources */,
 				92584FF21CA8D2FE007B1AC6 /* AFURLResponseSerialization.m in Sources */,
 				925850271CA90D99007B1AC6 /* Utilities.m in Sources */,
 				92584FF11CA8D2FE007B1AC6 /* AFURLRequestSerialization.m in Sources */,
 				925850B41CB3AFD5007B1AC6 /* NoteImageEditor.m in Sources */,
+				92BD76361CB5F7AB009A789A /* NoteRegularManager.m in Sources */,
 				925850171CA8D4F9007B1AC6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				92584FAB1CA8D2DA007B1AC6 /* FMDatabase.m in Sources */,
 				9258504D1CAA2C5D007B1AC6 /* NSAttributedString+YYText.m in Sources */,

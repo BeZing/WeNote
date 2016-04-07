@@ -310,4 +310,12 @@
     }
     return font;
 }
+
++(CGSize)fitImage:(UIImage*)oImg toSize:(CGSize)aSize{
+    CGSize  oSize = oImg.size;
+    CGFloat ws = oSize.width / aSize.width;
+    CGFloat hs = oSize.height / aSize.height;
+    CGFloat rs =  ws <= hs ? ws : hs;
+    return CGSizeMake(oSize.width * rs, oSize.height * rs);
+}
 @end

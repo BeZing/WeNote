@@ -8,19 +8,15 @@
 
 #import "EditTextView.h"
 @interface EditTextView()
-@property (nonatomic, strong) UITextView * textView;
+{
+    NSTextContainer * textContainer;
+    NSTextStorage * textStorage;
+    NSLayoutManager * layoutManager;
+}
+
 @end
 
 @implementation EditTextView
--(instancetype)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
 
--(void)drawRect:(CGRect)rect{
-    
-}
+
 @end

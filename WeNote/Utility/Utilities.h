@@ -40,4 +40,5 @@
 
 +(NSString *)getChinaDateTimeInterval:(NSString *)dateString;
 +(UIFont*)getSysemFont:(NSString*)textStyle;
++(CGSize)fitImage:(UIImage*)oImg toSize:(CGSize)aSize;
 @end

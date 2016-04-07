@@ -7,19 +7,23 @@
 //
 
 #import "SelectBtnView.h"
+
 @interface SelectBtnView()
+
+@property (nonatomic, strong) NSArray * items;
 @property (nonatomic, strong) NSMutableArray * btnArr;
+
 @end
+
+
 @implementation SelectBtnView
--(instancetype)initWithFrame:(CGRect)frame{
+-(instancetype)initWithFrame:(CGRect)frame andItems:(NSArray *)items{
     self = [super initWithFrame:frame];
     if (self) {
-        self.itemsArr = [NSArray array];
-        self.nomPicNameArr = [NSArray array];
-        self.heiPicNameArr = [NSArray array];
-        self.selectPicNameArr = [NSArray array];
         self.btnArr = [NSMutableArray array];
+        self.itemsArr = items;
         self.indexSelect = 0;
+        [self createBtns];
     }
     return self;
 }
@@ -33,15 +37,14 @@
             btn.selected = NO;
         }
     }
-    self.selectCallback((int)sender.tag - 1000);
+    self.selectCallback(self.itemsArr[sender.tag - 1000]);
 }
 
 
 #pragma setters
--(void)setItemsArr:(NSArray *)itemsArr{
+-(void)createBtns{
     
     CGFloat hei = self.bounds.size.height / self.itemsArr.count;
-    
     for (int i = 0; i < self.itemsArr.count; i ++) {
         UIButton * itemBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, i * hei, self.bounds.size.width,  hei)];
         itemBtn.tag = i + 1000;
@@ -58,33 +61,34 @@
     }
 }
 
--(void)setNomPicNameArr:(NSArray *)nomPicNameArr{
-    NSInteger count = nomPicNameArr.count >= self.itemsArr.count ? self.itemsArr.count : nomPicNameArr.count;
-    for (int i = 0; i < count; i++) {
+-(void)setNomPicArr:(NSArray *)nomPicArr{
+    _nomPicArr = nomPicArr;
+    for (int i = 0; i < _nomPicArr.count; i++) {
         UIButton * btn = self.btnArr[i];
-        [btn setImage:[UIImage imageNamed:nomPicNameArr[i]] forState:UIControlStateNormal];
+        [btn setImage:_nomPicArr[i] forState:UIControlStateNormal];
     }
 }
 
--(void)setHeiPicNameArr:(NSArray *)heiPicNameArr{
-    NSInteger count = heiPicNameArr.count >= self.itemsArr.count ? self.itemsArr.count : heiPicNameArr.count;
-    for (int i = 0; i < count; i++) {
+-(void)setHeiPicArr:(NSArray *)heiPicArr{
+    _heiPicArr = heiPicArr;
+    for (int i = 0; i < _heiPicArr.count; i++) {
         UIButton * btn = self.btnArr[i];
-        [btn setImage:[UIImage imageNamed:heiPicNameArr[i]] forState:UIControlStateHighlighted];
+        [btn setImage:_heiPicArr[i] forState:UIControlStateHighlighted];
     }
 }
 
--(void)setSelectPicNameArr:(NSArray *)selectPicNameArr{
-    NSInteger count = selectPicNameArr.count >= self.itemsArr.count ? self.itemsArr.count : selectPicNameArr.count;
-    for (int i = 0; i < count; i++) {
+-(void)setSelectPicArr:(NSArray *)selectPicArr{
+    _selectPicArr = selectPicArr;
+    for (int i = 0; i < _selectPicArr.count; i++) {
         UIButton * btn = self.btnArr[i];
-        [btn setImage:[UIImage imageNamed:selectPicNameArr[i]] forState:UIControlStateSelected];
+        [btn setImage:_selectPicArr[i] forState:UIControlStateSelected];
     }
 }
 
 -(void)setIndexSelect:(NSInteger)indexSelect{
-    if (self.btnArr.count > indexSelect) {
-        UIButton * btn = self.btnArr[indexSelect];
+    _indexSelect = indexSelect;
+    if (self.btnArr.count > _indexSelect) {
+        UIButton * btn = self.btnArr[_indexSelect];
         btn.selected = YES;
     }
 }
